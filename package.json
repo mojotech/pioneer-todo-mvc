@@ -1,3 +1,6 @@
 {
-  "name": "dill.js-example"
+  "name": "dill.js-example",
+  "dependencies": {
+    "dill": "git://github.com/mojotech/dill.js.git#mf/bunsen"
+  }
 }
