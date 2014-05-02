@@ -7,7 +7,7 @@ module.exports = function() {
     return new this.Widgets.TodoEntry().add(text);
   });
 
-  this.Then(/^I should "([^"]*)" todos$/, function(count) {
+  this.Then(/^I should see "([^"]*)" todos$/, function(count) {
     new this.Widgets.TodoList().items().should.eventually.have.length(+count);
   });
 }

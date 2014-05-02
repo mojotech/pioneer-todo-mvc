@@ -4,5 +4,5 @@ Feature: Todo MVC
 
   Scenario: I add a todo
     When I add a todo "eat apple jacks"
-    Then I should "1" todos
+    Then I should see "1" todos
 
