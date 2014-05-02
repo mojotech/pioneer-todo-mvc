@@ -1,7 +1,8 @@
-Feature: My First Feature
+Feature: Todo MVC
   Background:
-    Given I am a human
+    Given I view todomvc
 
-  Scenario: I see a duck
-    When I look up a duck
-    Then I should see "11" ducks
+  Scenario: I add a todo
+    When I add a todo "eat apple jacks"
+    Then I should "1" todos
+

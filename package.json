@@ -4,6 +4,6 @@
     "dill": "^0.1.0"
   },
   "scripts": {
-    "test": "dill --require steps/ --require widgets/ --format=pretty"
+    "test": "dill --require steps/ --require widgets/ --format=pretty --driver=phantomjs"
   }
 }

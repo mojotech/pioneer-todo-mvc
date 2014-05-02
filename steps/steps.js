@@ -1,18 +1,13 @@
 module.exports = function() {
-  this.Given(/^I am a human$/, function() {
-    return this.driver.get("http://google.com")
+  this.Given(/^I view todomvc$/, function() {
+    return this.driver.get("http://todomvc.com/labs/architecture-examples/backbone_marionette/")
   });
 
-  this.When(/^I look up a duck$/, function() {
-    var searchForm = new this.Widgets.searchForm();
-
-    return searchForm.searchFor("duck");
+  this.When(/^I add a todo "([^"]*)"$/, function(text) {
+    return new this.Widgets.TodoEntry().add(text);
   });
 
-  this.Then(/^I should see "([^"]*)" ducks$/, function(count) {
-    var searchResults = new this.Widgets.SearchResults();
-    return searchResults.items().then(function(items) {
-      items.length.should.equal(+count);
-    });
+  this.Then(/^I should "([^"]*)" todos$/, function(count) {
+    new this.Widgets.TodoList().items().should.eventually.have.length(+count);
   });
 }
