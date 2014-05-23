@@ -1,7 +1,7 @@
 {
   "name": "dill.js-example",
   "dependencies": {
-    "dill": "^0.1.0"
+    "dill": "^0.4.0"
   },
   "scripts": {
     "test": "dill --require steps/ --require widgets/ --format=pretty --driver=phantomjs"
