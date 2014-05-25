@@ -1,15 +1,11 @@
 module.exports = ->
   this.Widgets = this.Widgets || {}
 
-  return this.Widgets.TodoApp = this.Widget.extend
-    root: '#todoapp',
+  return this.Widgets.TodoApp = this.Widget.View.extend
+    root: '#todoapp'
+    appName: 'TodoMVC'
+    regionPath: 'header'
 
     addTodo: (text) ->
-      @find('#new-todo').then (elem) ->
+      @ui('input').then (elem) ->
         elem.sendKeys(text, Driver.Key.ENTER)
-
-    summaryText: -> @find('#todo-count').getText()
-
-    filterByCompleted: -> @click('#filters li:nth-child(3) a')
-
-    filterByActive: -> @click('#filters li:nth-child(2) a')

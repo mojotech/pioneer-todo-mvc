@@ -9,7 +9,7 @@ module.exports = ->
     itemSelector: 'li'
 
     numShown: ->
-      @filter (item) -> item.isShown()
+      @filter (item) ->  item.isShown()
 
     getItem: (index) ->
       @items().then (items) -> items[index]
