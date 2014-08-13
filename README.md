@@ -12,4 +12,4 @@ pioneer todo mvc test suite
 
     ./runner.sh
 
-Uncomment the sites that you want to test. Reports from each run are then stored in the reports directory. 
+Uncomment the sites that you want to test. Reports from each run are then stored in the reports directory.
