@@ -1,6 +1,6 @@
-dill.js getting started example
+pioneer getting started example
 --------------
-[![Build Status](https://travis-ci.org/Puppets/dill.js-getting-started.svg?branch=master)](https://travis-ci.org/Puppets/dill.js-getting-started)
+[![Build Status](https://travis-ci.org/Puppets/pioneer-getting-started.svg?branch=master)](https://travis-ci.org/Puppets/pioneer-getting-started)
 
 * `$ npm install`
 * `$ npm test`
