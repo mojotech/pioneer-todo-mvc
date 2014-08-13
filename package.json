@@ -1,9 +1,9 @@
 {
-  "name": "dill.js-example",
+  "name": "pioneer.js-example",
   "dependencies": {
-    "dill": "^0.4.0"
+    "pioneer": "^0.8.0-pre"
   },
   "scripts": {
-    "test": "dill --require steps/ --require widgets/ --format=pretty --driver=phantomjs"
+    "test": "pioneer"
   }
 }
