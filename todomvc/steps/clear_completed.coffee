@@ -17,5 +17,5 @@ module.exports = ->
   @Then /^the clear completed button should be hidden$/, ->
     new @Widget({
       root: "#clear-completed"
-    }).isPresent().should.eventually.eql(false)
+    }).isVisible().should.eventually.eql(false)
 

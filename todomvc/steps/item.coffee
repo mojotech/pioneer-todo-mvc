@@ -13,15 +13,21 @@ module.exports = ->
       root: "#todo-list"
     })
     .at(0).then (el) ->
-      el.getAttribute("class").should.eventually.eql("completed")
+      className = el.getAttribute("class").then (className) ->
+        ((string) ->
+          if(string.indexOf("completed") > -1)
+            true
+          else
+            false
+        )(className)
+        .should.eql(true)
 
   @Then /^its complete value should be checked$/, ->
-    # new @Widget.List({
-    #   root: "#todo-list"
-    # })
-    # .at(0).then (el) ->
-    #   el.getAttribute({selector:".toggle", attribute:"checked"}).should.eventually.eql(true)
-##############WAITING FOR GET ATTRIBUTE PUSH
+    new @Widget.List({
+      root: "#todo-list"
+    })
+    .at(0).then (el) ->
+      el.getAttribute({selector:".toggle", attribute:"checked"}).should.eventually.eql("true")
 
   # @Then /^I double click it$/, ->
   #   W = new @Widget.List({

@@ -26,17 +26,16 @@ module.exports = ->
     }).click()
 
   @Then /^all todos should be the same state as the toggle button$/, ->
-    # new @Widget({
-    #   root: "#toggle-all"
-    # }).getAttribute("checked").then (value) =>
-    #   state = value
-    #   new @Widget.List({
-    #     root: "#todo-list"
-    #   })
-    #   .each((item) ->
-    #     item.getAttribute({selector: "input", attribute: "checked"}).should.eventually.eql(state)
-    #   )
-################NEED GET ATTRIBUTE
+    new @Widget({
+      root: "#toggle-all"
+    }).getAttribute("checked").then (value) =>
+      state = value
+      new @Widget.List({
+        root: "#todo-list"
+      })
+      .each((item) ->
+        item.getAttribute({selector: "input", attribute: "checked"}).should.eventually.eql(state)
+      )
 
   @When /^I complete all todos$/, ->
     new @Widget.List({

@@ -16,7 +16,7 @@ module.exports = ->
       Driver.Key.ENTER
     )
 
-  @When /^I enter a new todo that is empty$/, ->
+  @Then /^I enter a new todo that is empty$/, ->
     new @Widget({
       root: "#new-todo"
     }).sendKeys(
@@ -31,12 +31,11 @@ module.exports = ->
     .readAt(0).should.eventually.eql("new todo")
 
   @Then /^it should not add it to the list$/, ->
-    W = new @Widget({
+    new @Widget.List({
       root: "#todo-list"
     })
-    if( W.isPresent())
-      # console.log('present')
-      W.getInnerHTML().should.eventually.eql("")
+    .items().then (items) ->
+      items.length.should.eql(1)
 
   @Then /^the input should be cleared$/, ->
     new @Widget({

@@ -17,5 +17,6 @@ Feature: New Todo
     Then the input should be trimmed
 
   Scenario: An empty todo should not be added
-    When I enter a new todo that is empty
+    When I enter a new todo
+    Then I enter a new todo that is empty
     Then it should not add it to the list

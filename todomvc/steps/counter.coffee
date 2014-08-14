@@ -6,9 +6,16 @@ module.exports = ->
     new @Widget({
       root: "#todo-count"
     })
-    .getInnerHTML()
-    .should.eventually.eql("<strong>3</strong> items left")
+    .getInnerHTML().then (html) ->
+      ((string) ->
+        if(string.indexOf("<strong>3</strong>") > -1)
+          true
+        else
+          false
+      )(html)
+      .should.eql(true)
 
+  ##########Gonna need to change for html reasons
   @Given /^I complete that todo$/, ->
     new @Widget.List({
       root: "#todo-list"

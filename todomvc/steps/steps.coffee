@@ -8,7 +8,7 @@ module.exports = ->
     W = new @Widget({
       root: "#todo-list"
     })
-    W.isPresent().then (result) =>
+    W.isVisible().then (result) =>
       if(result)
         W.getInnerHTML().then (html) =>
             unless html is ""
