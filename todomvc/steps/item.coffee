@@ -13,7 +13,7 @@ module.exports = ->
       root: "#todo-list"
     })
     .at(0).then (el) ->
-      className = el.getAttribute("class").then (className) ->
+      el.getAttribute("class").then (className) ->
         ((string) ->
           if(string.indexOf("completed") > -1)
             true
@@ -29,15 +29,23 @@ module.exports = ->
     .at(0).then (el) ->
       el.getAttribute({selector:".toggle", attribute:"checked"}).should.eventually.eql("true")
 
-  # @Then /^I double click it$/, ->
-  #   W = new @Widget.List({
-  #     root: "#todo-list"
-  #   })
-  #   W.clickAt({index: 0, selector: "label"})
-  #   W.clickAt({index: 0, selector: "label"})
+  @Then /^I double click it$/, ->
+    new @Widget.List({
+      root: "#todo-list"
+    })
+    .at(0).then (widget) =>
+      widget.find().then (el) =>
+        new Driver.ActionSequence(@driver).doubleClick(el).perform()
 
   @Then /^the todo should be in editing mode$/, ->
     new @Widget.List({
       root: "#todo-list"
     }).at(0).then (el) ->
-      el.getAttribute("class").should.eventually.eql("editing")
+      el.getAttribute("class").then (className) ->
+        ((string) ->
+          if(string.indexOf("editing") > -1)
+            true
+          else
+            false
+        )(className)
+        .should.eql(true)

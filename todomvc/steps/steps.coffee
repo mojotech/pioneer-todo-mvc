@@ -1,9 +1,8 @@
 Driver = require('selenium-webdriver')
 module.exports = ->
-
   @Given /^I visit TODOMVC$/, ->
     this.driver.get('http://todomvc.com/architecture-examples/backbone/')
-
+    # this.driver.get('http://todomvc.com/labs/architecture-examples/backbone_marionette/')
   @When /^I make sure that there are no todos$/, ->
     W = new @Widget({
       root: "#todo-list"

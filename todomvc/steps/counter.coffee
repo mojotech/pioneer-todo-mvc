@@ -8,14 +8,13 @@ module.exports = ->
     })
     .getInnerHTML().then (html) ->
       ((string) ->
-        if(string.indexOf("<strong>3</strong>") > -1)
+        if(string.indexOf(">3</strong>") > -1)
           true
         else
           false
       )(html)
       .should.eql(true)
-
-  ##########Gonna need to change for html reasons
+##############NEEDS CHANGING for exactness
   @Given /^I complete that todo$/, ->
     new @Widget.List({
       root: "#todo-list"
