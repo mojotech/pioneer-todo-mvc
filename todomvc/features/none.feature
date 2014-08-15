@@ -2,7 +2,7 @@ Feature: No Todos
 
   Background:
     Given I visit TODOMVC
-    When I make sure that there are no todos
+    And I make sure that there are no todos
 
   Scenario: ID main should be hidden
     Then Main should be hidden

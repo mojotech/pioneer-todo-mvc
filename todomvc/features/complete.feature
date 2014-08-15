@@ -2,6 +2,7 @@ Feature: Mark all as Complete
 
   Background:
     Given I visit TODOMVC
+    And I make sure that there are no todos
     When I add three todos to the list
 
   Scenario: Checkbox toggles all todos to the same state as itself

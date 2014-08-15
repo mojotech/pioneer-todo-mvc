@@ -11,10 +11,11 @@ module.exports = ->
         if(string.indexOf(">3</strong>") > -1)
           true
         else
+          console.log(string)
           false
       )(html)
       .should.eql(true)
-##############NEEDS CHANGING for exactness
+
   @Given /^I complete that todo$/, ->
     new @Widget.List({
       root: "#todo-list"

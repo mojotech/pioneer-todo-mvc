@@ -2,6 +2,7 @@ Feature: Todo Counter
 
   Background:
     Given I visit TODOMVC
+    And I make sure that there are no todos
 
   Scenario: The number of active todos is displayed
     And I add three todos to the list

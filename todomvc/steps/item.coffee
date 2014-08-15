@@ -34,8 +34,7 @@ module.exports = ->
       root: "#todo-list"
     })
     .at(0).then (widget) =>
-      widget.find().then (el) =>
-        new Driver.ActionSequence(@driver).doubleClick(el).perform()
+      widget.doubleClick()
 
   @Then /^the todo should be in editing mode$/, ->
     new @Widget.List({
@@ -49,3 +48,14 @@ module.exports = ->
             false
         )(className)
         .should.eql(true)
+
+  @Given /^I hover over it$/, ->
+    new @Widget.List({
+      root: "#todo-list"
+    }).at(0).then (el) =>
+      el.hover()
+
+  @Then /^I should be able to see the remove button$/, ->
+    new @Widget({
+      root: ".destroy"
+    }).isVisible().should.eventually.eql(true)

@@ -2,7 +2,7 @@ Feature: Item interactions
 
   Background:
     Given I visit TODOMVC
-    When I make sure that there are no todos
+    And I make sure that there are no todos
 
   Scenario: Clicking checkbox updates completed value
     When I enter a new todo

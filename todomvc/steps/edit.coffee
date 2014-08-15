@@ -5,8 +5,7 @@ module.exports = ->
       root: "#todo-list"
     })
     .at(0).then (widget) =>
-      widget.find().then (el) =>
-        new Driver.ActionSequence(@driver).doubleClick(el).perform()
+      widget.doubleClick()
 
   @Given /^clear the input$/, ->
     new @Widget({
@@ -56,7 +55,7 @@ module.exports = ->
     new @Widget({
       root: "input.edit"
     })
-    .getValue().should.eventually.eql("addition")
+    .getValue().should.eventually.eql("new todo addition")
 
   @Given /^press escape$/, ->
     new @Widget({
@@ -90,7 +89,7 @@ module.exports = ->
     new @Widget.List({
       root: "#todo-list"
     })
-    .readAt(0).should.eventually.eql("addition")
+    .readAt(0).should.eventually.eql("new todo addition")
 
   @Then /^the editing class should be removed from parent li$/, ->
     new @Widget.List({

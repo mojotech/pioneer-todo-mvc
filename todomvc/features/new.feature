@@ -2,7 +2,7 @@ Feature: New Todo
 
   Background:
     Given I visit TODOMVC
-    When I make sure that there are no todos
+    And I make sure that there are no todos
 
   Scenario: Pressing enter creates the todo
     When I enter a new todo
