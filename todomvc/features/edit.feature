@@ -12,7 +12,7 @@ Feature: Editing a Todo
 
   Scenario: An input will be brought forward containing the todo title
     Then an input will be brought forward
-
+@wow
   Scenario: The input should be focused
     Then the input will be focused
 

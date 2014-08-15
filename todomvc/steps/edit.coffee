@@ -9,6 +9,17 @@ module.exports = ->
     new @Widgets.InputEdit()
     .find().then (el) -> el.clear()
 
+  @Then /^an input will be brought forward$/, ->
+    new @Widgets.InputEdit()
+    .isVisible().should.eventually.eql(true)
+
+  @Then /^the input will be focused$/, ->
+    @driver.switchTo().activeElement().then (el) =>
+      new @Widget({
+        el: el
+      })
+      .getValue().should.eventually.eql("new todo")
+
   @Then /^the toggle button will be hidden$/, ->
     new @Widgets.TodoList()
     .at(0).then (widget) ->
