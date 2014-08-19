@@ -1,0 +1,11 @@
+{
+  "feature": "todomvc/features",
+  "require": [
+    "todomvc/steps"
+  ],
+  "format": "pioneerformat.js",
+  "driver": "chrome",
+  "error_formatter": "error_formatter.js",
+  "preventReload": false,
+  "coffee": true
+}
