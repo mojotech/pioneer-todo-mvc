@@ -1,7 +1,8 @@
 {
   "name": "pioneer.js-example",
   "dependencies": {
-    "pioneer": "^0.8.0-pre"
+    "pioneer": "^0.8.0-pre",
+    "selenium-webdriver": "^2.42.1"
   },
   "scripts": {
     "test": "pioneer"
