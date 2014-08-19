@@ -1,7 +1,8 @@
 Driver = require('selenium-webdriver')
 module.exports = ->
   @Given /^I visit TODOMVC$/, ->
-    this.driver.get('http://todomvc.com/architecture-examples/angularjs/')
+    @URL = 'http://todomvc.com/architecture-examples/angularjs/'
+    this.driver.get(@URL)
 
   @When /^I make sure that there are no todos$/, ->
     W = new @Widgets.TodoList()
