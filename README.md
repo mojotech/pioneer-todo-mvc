@@ -1,7 +1,7 @@
 pioneer todo mvc test suite
 --------------
 
-[![Build Status](https://travis-ci.org/mojotech/pioneer-todo-mvc.svg?branch=jt%2Ftodomvc)](https://travis-ci.org/mojotech/pioneer-todo-mvc)
+[![Build Status](https://travis-ci.org/mojotech/pioneer-todo-mvc.svg?branch=master)](https://travis-ci.org/mojotech/pioneer-todo-mvc)
 
 ## Running the suite
 
