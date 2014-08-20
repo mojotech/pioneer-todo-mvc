@@ -1,6 +1,6 @@
 pioneer getting started example
 --------------
-[![Build Status](https://travis-ci.org/Puppets/pioneer-getting-started.svg?branch=master)](https://travis-ci.org/Puppets/pioneer-getting-started)
+[![Build Status](https://travis-ci.org/Puppets/pioneer-getting-started.svg?branch=jt%2Ftodomvc)](https://travis-ci.org/Puppets/pioneer-getting-started)
 
 * `$ npm install`
 * `$ npm test`
