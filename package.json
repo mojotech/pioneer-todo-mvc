@@ -3,10 +3,10 @@
   "dependencies": {
     "lodash": "^2.4.1",
     "minimist": "^1.1.0",
-    "pioneer": "^0.8.1",
+    "pioneer": "^0.8.2",
     "selenium-webdriver": "^2.42.1"
   },
   "scripts": {
-    "test": "pioneer --urlPath=\"http://www.todomvc.com/architecture-examples/angularjs/\""
+    "test": "pioneer --urlPath=\"http://todomvc.com/architecture-examples/angularjs/\""
   }
 }
