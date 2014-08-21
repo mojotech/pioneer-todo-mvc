@@ -7,6 +7,6 @@
     "selenium-webdriver": "^2.42.1"
   },
   "scripts": {
-    "test": "pioneer --urlPath=\"http://www.todomvc.com/architecture-examples/angularjs\""
+    "test": "pioneer --urlPath=\"http://www.todomvc.com/architecture-examples/angularjs/\""
   }
 }
