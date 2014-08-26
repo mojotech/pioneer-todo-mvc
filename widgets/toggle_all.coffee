@@ -8,6 +8,3 @@ module.exports = ->
 
     isChecked: ->
       @getAttribute("checked")
-
-  @Widgets.ClearCompleted = @Widget.extend
-    root: "#clear-completed"

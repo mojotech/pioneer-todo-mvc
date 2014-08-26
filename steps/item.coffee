@@ -29,6 +29,5 @@ module.exports = ->
       el.hover()
 
   @Then /^I should be able to see the remove button$/, ->
-    new @Widget({
-      root: ".destroy"
-    }).isVisible().should.eventually.eql(true)
+    @W.isVisible({selector: ".destroy"})
+    .should.eventually.eql(true)

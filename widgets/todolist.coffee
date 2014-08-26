@@ -49,8 +49,7 @@ module.exports = ->
         })
 
     clearAll: ->
-      toggle          = new World.Widgets.ToggleAll()
-      clearCompleted  = new World.Widgets.ClearCompleted()
+      toggle = new World.Widgets.ToggleAll()
 
       @isVisible().then (visible) =>
         if(visible)
@@ -59,7 +58,6 @@ module.exports = ->
               toggle.isChecked().then (atr) =>
                 if(!atr)
                   toggle.click().then =>
-                    clearCompleted.click()
+                    World.Widget.click({selector: "#clear-completed"})
                 else
-                  clearCompleted.click()
-
+                  World.Widget.click({selector: "#clear-completed"})

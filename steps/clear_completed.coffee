@@ -1,8 +1,7 @@
 Driver = require('selenium-webdriver')
 module.exports = ->
   @Then /^I should see two completed todos on the button$/, ->
-    new @Widgets.ClearCompleted()
-    .read()
+    @W.read({selector: "#clear-completed"})
     .should.eventually.eql("Clear completed (2)")
 
   @Then /^the completed todo should be removed$/, ->
@@ -10,6 +9,5 @@ module.exports = ->
     .length().should.eventually.eql(2)
 
   @Then /^the clear completed button should be hidden$/, ->
-    new @Widgets.ClearCompleted()
-    .isVisible().should.eventually.eql(false)
-
+    @W.isVisible({selector: "#clear-completed"})
+    .should.eventually.eql(false)
