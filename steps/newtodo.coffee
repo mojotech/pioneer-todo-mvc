@@ -26,8 +26,8 @@ module.exports = ->
     .length().should.eventually.eql(1)
 
   @Then /^the input should be cleared$/, ->
-    new @Widgets.NewTodo()
-    .getValue().should.eventually.eql("")
+    @W.getValue("#new-todo")
+    .should.eventually.eql("")
 
   @Then /^the input should be trimmed$/, ->
     new @Widgets.TodoList()

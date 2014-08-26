@@ -9,8 +9,8 @@ module.exports = ->
     .clear()
 
   @Then /^an input will be brought forward$/, ->
-    new @Widgets.InputEdit()
-    .isVisible().should.eventually.eql(true)
+    @W.isVisible({selector: "input.edit"})
+    .should.eventually.eql(true)
 
   @Then /^the input will be focused$/, ->
     @driver.switchTo().activeElement().then (el) =>
@@ -35,26 +35,22 @@ module.exports = ->
 
   @Given /^press enter$/, ->
     new @Widgets.InputEdit()
-    .fill({
-      value: Driver.Key.ENTER
-    })
+    .sendKeys(Driver.Key.ENTER)
 
   @Given /^click elsewhere$/, ->
-    new @Widget({
-      root: "#footer"
-    }).click()
+    @W.click({selector: "#footer"})
 
   @Then /^it should be saved$/, ->
-    new @Widgets.InputEdit()
-    .getValue().should.eventually.eql("new todo addition")
+    @W.getValue({selector: "input.edit"})
+    .should.eventually.eql("new todo addition")
 
   @Given /^press escape$/, ->
     new @Widgets.InputEdit()
     .sendEscape()
 
   @Then /^it should be unchanged$/, ->
-    new @Widgets.InputEdit()
-    .getValue().should.eventually.eql("new todo")
+    @W.getValue({selector: "input.edit"})
+    .should.eventually.eql("new todo")
 
   @Given /^I fill the input with something untrimmed$/, ->
     new @Widgets.InputEdit()
@@ -81,5 +77,5 @@ module.exports = ->
     .find().then (el) -> el.clear()
 
   @Then /^it should be removed$/, ->
-    new @Widgets.TodoList()
-    .isVisible().should.eventually.eql(false)
+    @W.isVisible({selector: "#todo-list"})
+    .should.eventually.eql(false)

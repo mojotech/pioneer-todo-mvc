@@ -11,8 +11,7 @@ module.exports = ->
     .complete(1)
 
   @When /^I click the toggle all button$/, ->
-    new @Widgets.ToggleAll()
-    .click()
+    @W.click({selector: "#toggle-all"})
 
   @Then /^all todos should be the same state as the toggle button$/, ->
     new @Widgets.ToggleAll()
@@ -30,12 +29,18 @@ module.exports = ->
     )
 
   @Then /^the toggle-all button should not be checked$/, ->
-    new @Widgets.ToggleAll()
-    .getAttribute("checked").should.eventually.eql(null)
+    @W.getAttribute({
+      selector: "#toggle-all",
+      attribute: "checked"
+    })
+    .should.eventually.eql(null)
 
   @Then /^the toggle-all button should be checked$/, ->
-    new @Widgets.ToggleAll()
-    .getAttribute("checked").should.eventually.eql("true")
+    @W.getAttribute({
+      selector: "#toggle-all",
+      attribute: "checked"
+    })
+    .should.eventually.eql("true")
 
   @When /^I complete two todos$/, ->
     W = new @Widgets.TodoList()
@@ -43,6 +48,5 @@ module.exports = ->
       W.complete(1)
 
   @When /^I click clear completed$/, ->
-    new @Widgets.ClearCompleted()
-    .click()
+    @W.click({selector:"#clear-completed"})
 

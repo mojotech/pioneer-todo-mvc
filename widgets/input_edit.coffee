@@ -12,10 +12,7 @@ module.exports = ->
     append: (opts)->
       if _.isString(opts)
         opts = {value: opts}
-
-      @fill({
-        value: [Driver.Key.SPACE].concat(opts.value)
-      })
+      @sendKeys.apply(this, [Driver.Key.SPACE].concat(opts.value))
 
     sendEscape: ->
-      @fill({value: Driver.Key.ESCAPE})
+      @sendKeys(Driver.Key.ESCAPE)
