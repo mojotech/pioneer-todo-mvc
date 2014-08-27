@@ -21,19 +21,16 @@ module.exports = ->
     checkEachClass: (className) ->
       @map( (item) =>
         item.isVisible().then (vis) ->
-          item.getAttribute("class").then (itemClass) ->
-            itemClass.indexOf(className) > -1
+          item.hasClass(className)
       )
 
     isEditing: (index) ->
       @at(index).then (el) ->
-        el.getAttribute("class").then (className) ->
-          className.indexOf("editing") > -1
+        el.hasClass("editing")
 
     isCompleted: (index) ->
-      @at(0).then (el) ->
-        el.getAttribute("class").then (className) ->
-          className.indexOf("completed") > -1
+      @at(index).then (el) ->
+        el.hasClass("completed")
 
     isChecked: (index) ->
       @at(index).then (el) ->
