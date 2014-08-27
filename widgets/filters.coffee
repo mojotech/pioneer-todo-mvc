@@ -6,8 +6,7 @@ module.exports = ->
 
     isSelected: (index) ->
       @at(index).then (el) ->
-        el.getAttribute({
-          selector: "a",
-          attribute: "class"
-        }).then (className) ->
-          className.indexOf("selected") > -1
+        el.hasClass({
+          className: "selected",
+          selector: "a"
+        })
