@@ -43,9 +43,7 @@ module.exports = function(options, Cucumber) {
 
     source = tagSource + self._pad(source, currentMaxStepLength + 3);
 
-    uri = "# " + scenario.getUri().replace(process.cwd(),'').slice(1) + ":" + scenario.getLine();
-
-    source += uri + "\n";
+    source += "\n";
 
     self.logIndented(source, 1);
     callback();
@@ -81,15 +79,11 @@ module.exports = function(options, Cucumber) {
     var stepResult = event.getPayloadItem('stepResult');
     var step = stepResult.getStep();
 
-    var uri = "";
-
-    uri = "# " + step.getUri().replace(process.cwd(),'').slice(1) + ":" + step.getLine();
-
     var source = self.appendResult(stepResult, step.getKeyword() + step.getName());
 
     source = self._pad(source, currentMaxStepLength + 10);
 
-    source += uri + "\n";
+    source += "\n";
     self.logIndented(source, 2);
 
     if (step.hasDataTable()) {
